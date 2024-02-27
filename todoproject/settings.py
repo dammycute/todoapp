@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-oso55j7un1r)_&n8lxq#q*86w5@6rpnlfgj5@o$#1r*(^aqmv-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'authentication',
     'todoApp',
     'drf_yasg',
+    "corsheaders",
     'django_filters',
     'rest_framework_simplejwt',
 ]
@@ -54,7 +55,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'todoproject.urls'
 
@@ -78,13 +82,24 @@ WSGI_APPLICATION = 'todoproject.wsgi.application'
 
 AUTH_USER_MODEL = "authentication.User"
 
+
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:8000",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "https://dammy-todoapp.netlify.app",
+    "https://htcode12.pythonanywhere.com",
+
+]
+
+
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
-    'PAGE_SIZE': 10,
+    'PAGE_SIZE': 9,
 }
 
 
