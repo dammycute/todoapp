@@ -1,1 +1,1 @@
-This is a Todo api create with django rest framework
+This is a Todo api created with django rest framework
