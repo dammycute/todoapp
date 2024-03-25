@@ -92,6 +92,11 @@ CORS_ALLOWED_ORIGINS = [
 
 ]
 
+CORS_ORIGIN_WHITELIST = [
+    "https://dammy-todoapp.netlify.app",
+    "https://htcode12.pythonanywhere.com",
+]
+
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
@@ -104,7 +109,7 @@ REST_FRAMEWORK = {
 
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(hours=5),
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=90),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     
     }
