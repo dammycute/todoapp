@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-oso55j7un1r)_&n8lxq#q*86w5@6rpnlfgj5@o$#1r*(^aqmv-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "https://dammy-todoapp.netlify.app", ".netlify.app"]
 
 
 # Application definition
@@ -89,12 +89,13 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5173",
     "https://dammy-todoapp.netlify.app",
     "https://htcode12.pythonanywhere.com",
-
+    ".netlify.app",
 ]
 
 CORS_ORIGIN_WHITELIST = [
     "https://dammy-todoapp.netlify.app",
     "https://htcode12.pythonanywhere.com",
+    ".netlify.app",
 ]
 
 
